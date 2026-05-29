@@ -1,5 +1,6 @@
 streamlit==1.32.2
 pillow==10.2.0
-openai==0.28.1
+openai==1.30.5
+httpx==0.27.0  # 补充依赖，避免网络请求冲突
 pypdf2==3.0.1
 plotly==5.20.0

@@ -3,10 +3,16 @@ import PyPDF2
 import re
 from openai import OpenAI
 import plotly.graph_objects as go
+# ==================== 安全配置：从 Streamlit Secrets 读取密钥 ====================
+import streamlit as st
 
-# ===================== 配置区（替换为你的API Key）=====================
-LLM_API_KEY = "sk-cf236d59864f44f292b5bf865b80e9ac"  # 这里替换成你的DeepSeek API Key
-LLM_BASE_URL = "https://api.deepseek.com"
+# 从加密配置中读取（云端+本地通用，绝对安全）
+try:
+    LLM_API_KEY = st.secrets["LLM_API_KEY"]
+    LLM_BASE_URL = st.secrets["LLM_BASE_URL"]
+except Exception as e:
+    st.error("❌ 配置错误：未找到加密密钥，请检查 Streamlit Secrets 设置")
+    st.stop()  # 终止程序，避免无密钥运行
 MODEL_NAME = "deepseek-chat"
 # =================================================================
 

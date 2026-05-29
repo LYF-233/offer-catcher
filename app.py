@@ -5,7 +5,7 @@ from openai import OpenAI
 import plotly.graph_objects as go
 
 # ===================== 配置区（替换为你的API Key）=====================
-LLM_API_KEY = "sk-cf236d59864f44f292b5bf865b80e9ac"  # 这里替换成你的DeepSeek API Key
+LLM_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxx"  # 这里替换成你的DeepSeek API Key
 LLM_BASE_URL = "https://api.deepseek.com"
 MODEL_NAME = "deepseek-chat"
 # =================================================================
